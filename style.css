@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(
+        -45deg,
+        #0f2027,
+        #203a43,
+        #2c5364,
+        #0b3c5d
+    );
+    background-size: 400% 400%;
+    animation: bgMove 12s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+
+@keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+/* Wrapper */
+.app-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+/* Watch */
+.container {
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #00f2ff, #6a5cff);
+    box-shadow:
+        0 0 60px rgba(0, 255, 255, 0.35),
+        inset 0 0 40px rgba(255, 255, 255, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Title */
+.container h1 {
+    font-size: 18px;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+/* Time */
+.time {
+    font-size: 72px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-shadow: 0 0 20px rgba(0,255,255,0.6);
+}
+
+/* Buttons */
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.buttons button {
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(8px);
+    transition: 0.3s ease;
+}
+
+.buttons button:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.45);
+}
+
+/* Laps container */
+.laps-container {
+    width: 360px;
+    max-height: 180px;
+    padding: 12px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.35);
+    overflow-y: auto;
+}
+
+/* Laps */
+#laps {
+    list-style: none;
+}
+
+#laps li {
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.35);
+    font-size: 14px;
+}
+
+/* Scrollbar */
+.laps-container::-webkit-scrollbar {
+    width: 5px;
+}
+
+.laps-container::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.5);
+    border-radius: 10px;
+}
